@@ -1,6 +1,4 @@
 const { ipcMain, dialog, app } = require('electron')
-const { chld } = require('child_process').execFile;
-var executablePath = "/usr/bin/xeyes";
 
 ipcMain.on('show-open-dialog', (event, arg)=> {
 

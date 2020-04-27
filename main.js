@@ -8,12 +8,9 @@ if (setupEvents.handleSquirrelEvent()) {
 const electron = require('electron')
 // Module to control application life.
 const app = electron.app
-const { ipcMain } = require('electron')
+const {ipcMain} = require('electron')
 var path = require('path')
 require('./dialog/dialog')
-
-var child = require('child_process').execFile;
-var executablePath = "/home/ai-developer/Downloads/embree-3.9.0.x86_64.linux/bin/pathtracer";
 
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
@@ -24,16 +21,16 @@ const BrowserWindow = electron.BrowserWindow
 let mainWindow
 let secondWindow
 
-function createWindow() {
+function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({
-    titleBarStyle: 'hidden',
-    width: 900, //1281,
-    height: 800,
-    minWidth: 900, //,
-    minHeight: 800,
-    backgroundColor: '#312450',
+  mainWindow = new BrowserWindow({titleBarStyle: 'hidden',
+    width: 1200,
+    height: 600,
+    minWidth: 1200,
+    minHeight: 600,
+    backgroundColor: '#0071c5',
     show: false,
+    frame: true,
     icon: path.join(__dirname, 'assets/icons/png/64x64.png'),
     webPreferences: {
       nodeIntegration: true
@@ -41,7 +38,7 @@ function createWindow() {
   })
 
   // and load the index.html of the app.
-  mainWindow.loadURL(`file://${__dirname}/test.html`)
+  mainWindow.loadURL(`file://${__dirname}/index.html`)
 
   // Open the DevTools.
   //mainWindow.webContents.openDevTools()
@@ -60,13 +57,12 @@ function createWindow() {
     mainWindow = null
   })
 
-  secondWindow = new BrowserWindow({
-    frame: false,
+  secondWindow = new BrowserWindow({frame: false,
     width: 800,
     height: 600,
     minWidth: 800,
     minHeight: 600,
-    backgroundColor: '#312450',
+    backgroundColor: '#0071c5',
     show: false,
     icon: path.join(__dirname, 'assets/icons/png/64x64.png'),
     parent: mainWindow,
@@ -80,23 +76,12 @@ function createWindow() {
   require('./menu/mainmenu')
 }
 
-ipcMain.on('open-second-window', (event, arg) => {
-  secondWindow.show()
+ipcMain.on('open-second-window', (event, arg)=> {
+    secondWindow.show()
 })
 
-ipcMain.on('open-xeyes', (event, arg) => {
-  child(executablePath, function (err, data) {
-    if (err) {
-      console.error(err);
-      return;
-    }
-
-    console.log(data.toString());
-  });
-})
-
-ipcMain.on('close-second-window', (event, arg) => {
-  secondWindow.hide()
+ipcMain.on('close-second-window', (event, arg)=> {
+    secondWindow.hide()
 })
 
 // This method will be called when Electron has finished

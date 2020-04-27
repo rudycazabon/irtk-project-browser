@@ -8,10 +8,6 @@ function(n) {
         ipcRenderer.send('open-second-window', 'an-argument')
       },
 
-      sendXeyesEvent: function() {
-        ipcRenderer.send('open-xeyes', 'an-argument')
-      },
-
       sendCloseSecondWindowEvent: function() {
         ipcRenderer.send('close-second-window', 'an-argument')
       },
@@ -19,10 +15,6 @@ function(n) {
       init: function() {
         $('#open-secondwindow-button').click( function () {
           ipc.messaging.sendOpenSecondWindowEvent()
-        })
-
-        $('#open-xeyes-button').click( function () {
-          ipc.messaging.sendXeyesEvent()
         })
 
         $('#close-me-button').click( function () {
