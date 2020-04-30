@@ -12,6 +12,10 @@ function(n) {
         ipcRenderer.send('close-second-window', 'an-argument')
       },
 
+      sendOpenXeyesEvent: function() {
+        ipcRenderer.send('open-pathtracer-app', 'an-argument')
+      },
+
       init: function() {
         $('#open-secondwindow-button').click( function () {
           ipc.messaging.sendOpenSecondWindowEvent()
@@ -19,6 +23,10 @@ function(n) {
 
         $('#close-me-button').click( function () {
           ipc.messaging.sendCloseSecondWindowEvent()
+        })
+
+        $('#launch-pathtracer-button').click( function() {
+          ipc.messaging.sendOpenXeyesEvent()
         })
 
       }

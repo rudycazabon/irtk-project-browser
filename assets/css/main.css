@@ -1,11 +1,20 @@
 @import url(font-awesome.min.css);
+
+@font-face {
+    font-family: 'Intel Clear';
+    src: local('fonts/IntelClear_Bd.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal
+}
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     margin: 0;
     padding: 0;
     border: 0;
     font-size: 100%;
     font: inherit;
-    vertical-align: baseline
+    vertical-align: baseline;
+    font-family: 'Intel Clear';
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -1506,7 +1515,7 @@ input[type="submit"], input[type="reset"], input[type="button"], input[type="tex
     transition: border-color 0.2s ease;
     background-color: transparent;
     border: solid 1px !important;
-    border-color: rgba(255, 255, 255, 0.15) !important;
+    border-color: rgba(16, 14, 170, 0.15) !important;
     border-radius: 3em;
     color: #fff !important;
     cursor: pointer;
@@ -1940,7 +1949,7 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 }
 
 select option {
-    background-color: #0071c5;
+    background-color: #011d33;
     color: #fff
 }
 
@@ -2554,7 +2563,7 @@ body.is-ie .spotlights>section {
     -ms-justify-content: center;
     justify-content: center;
     width: 50em;
-    -ms-flex: 1
+    -ms-flex: 1;
 }
 
 .spotlights>section>.content>.inner {
@@ -2958,7 +2967,7 @@ body.is-ie .wrapper.fullscreen {
 }
 
 #footer>.inner a {
-    border-bottom-color: rgba(255, 255, 255, 0.15)
+    border-bottom-color: rgba(255, 255, 255, 1.00)
 }
 
 #footer>.inner a:hover {
@@ -2967,7 +2976,7 @@ body.is-ie .wrapper.fullscreen {
 
 #footer>.inner .menu {
     font-size: 0.8em;
-    color: rgba(255, 255, 255, 0.15)
+    color: rgba(255, 255, 255, 1.00)
 }
 
 #header+#wrapper+#footer>.inner {

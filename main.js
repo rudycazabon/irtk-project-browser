@@ -23,13 +23,17 @@ let secondWindow
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({titleBarStyle: 'hidden',
-    width: 1200,
+  mainWindow = new BrowserWindow({
+    titleBarStyle: 'hidden',
+    width: 1300,
     height: 600,
-    minWidth: 1200,
+    minWidth: 1300,
     minHeight: 600,
+    maxHeight: 1300,
+    maxWidth: 600,
+    resizable: false,
     backgroundColor: '#0071c5',
-    show: false,
+    show: true,
     frame: true,
     icon: path.join(__dirname, 'assets/icons/png/64x64.png'),
     webPreferences: {
@@ -37,11 +41,13 @@ function createWindow () {
     }
   })
 
+  mainWindow.center();
+
   // and load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/index.html`)
 
   // Open the DevTools.
-  //mainWindow.webContents.openDevTools()
+  // mainWindow.webContents.openDevTools()
 
 
   // Show the mainwindow when it is loaded and ready to show
@@ -82,6 +88,16 @@ ipcMain.on('open-second-window', (event, arg)=> {
 
 ipcMain.on('close-second-window', (event, arg)=> {
     secondWindow.hide()
+})
+
+ipcMain.on('open-pathtracer-app', (event, arg) => {
+  var child = require('child_process').execFile;
+  var executablePath = "/home/ai-developer/Projects/embree/bin/pathtracer";
+    
+  child(executablePath, function(err, data) {
+       console.log(err)
+       console.log(data.toString());
+  });  
 })
 
 // This method will be called when Electron has finished

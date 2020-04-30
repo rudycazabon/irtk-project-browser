@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+    <html lang="en">
+        <head>
+        <title>CSS Template</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style type="text/css" media="screen, print">
+
+        @import url(//fonts.googleapis.com/css?family=Open+Sans);
+
+        @font-face {
+                font-family: 'Intel Clear';
+                src: local("/assets/fonts/IntelClear_Rg") format("ttf");
+            }
+
+        * {
+          box-sizing: border-box;
+        }
+        
+        body {
+          font-family: 'Intel Clear';
+        }
+        
+        /* Style the header */
+        .header {
+          background-color: #f1f1f1;
+          width: 900px;
+          padding: 30px;
+          text-align: center;
+          font-size: 35px;
+          border-style: solid;
+          border-color: black;
+        }
+        
+        .table {
+            font-family: 'Intel Clear', sans-serif;
+            width: 900px; 
+            display: table; 
+            background-color: lightblue;
+        }
+
+        /* Create three equal columns that floats next to each other */
+        .column {
+          float: center;
+          width: 33.33%;
+          padding: 10px;
+          height: 300px; /* Should be removed. Only for demonstration */
+        }
+
+        .cell {
+            font-family: 'Intel Clear', sans-serif;
+            float: center;
+            display: table-cell; 
+            height: 60px;
+            width: 150px;
+            border-style: solid;
+            border-color: black;
+            text-align: center;            
+        }
+
+        .row {
+            font-family: 'Intel Clear', sans-serif;
+            display: table-row;
+            height: 100px;
+            border-style: solid;
+            border-color: black;
+        }
+        
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+
+        .pic {
+            max-width: 100%; 
+            max-height: 100%; 
+            display: block;
+            align-content: center;
+        }
+        
+        /* Style the footer */
+        .footer {
+          background-color: #f1f1f1;
+          width: 900px;
+          padding: 10px;
+          text-align: center;
+          border-style: solid;
+          border-color: black;
+        }
+        
+        /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+        @media (max-width: 600px) {
+          .column {
+            width: 100%;
+          }
+        }
+        </style>
+        </head>    
+    <body>
+        <div class="header">Intel Rendering Toolkit</div>
+        <div class="table">
+            <div id="row">
+                <div class="cell" style="background-color: #888;">Embree</div>
+                <div class="cell" style="background-color: #aaa;">
+                    <img class="pic" src="file:///home/ai-developer/Projects/electron-tutorial-app/assets/images/obj-fairy.png"></img>
+                </div>
+                <div class="cell" style="background-color: #bbb;">Description</div>
+                <div class="cell" style="background-color: #ccc;">
+                    <a href="file:///home/ai-developer/Projects/embree/readme.pdf">Embree README.pdf</a>
+                </div>
+                <div class="cell" style="background-color: #ddd;">Embree pathfinder terminal</div>
+                <div class="cell" style="background-color: #eee;">Embree pathfinder sample</div>
+            </div>
+
+            <div id="row">
+                <div class="cell" style="background-color: #888;">Ospray</div>
+                <div class="cell" style="background-color: #aaa;">
+                    <img class="pic" src="file:///home/ai-developer/Projects/electron-tutorial-app/assets/images/obj-fairy.png"></img>
+                </div>
+                <div class="cell" style="background-color: #bbb;">Description</div>
+                <div class="cell" style="background-color: #ccc;">
+                    <a href="file:///home/ai-developer/Projects/embree/readme.pdf">Ospray README.pdf</a>
+                </div>
+                <div class="cell" style="background-color: #ddd;">Ospray sample terminal</div>
+                <div class="cell" style="background-color: #eee;">Ospray sample folder</div>
+            </div>
+
+            <div id="row">
+                <div class="cell" style="background-color: #888;">OpenVKL</div>
+                <div class="cell" style="background-color: #aaa;">
+                    <img class="pic" src="file:///home/ai-developer/Projects/electron-tutorial-app/assets/images/obj-fairy.png"></img>
+                </div>
+                <div class="cell" style="background-color: #bbb;">Description</div>
+                <div class="cell" style="background-color: #ccc;">
+                    <a href="file:///home/ai-developer/Projects/embree/readme.pdf">OpenVKL README.pdf</a>
+                </div>
+                <div class="cell" style="background-color: #ddd;">OpenVKL sample terminal</div>
+                <div class="cell" style="background-color: #eee;">OpenVKL sample folder</div>
+            </div>
+
+            <div id="row">
+                <div class="cell" style="background-color: #888;">Image Denoiser</div>
+                <div class="cell" style="background-color: #aaa;">
+                    <img class="pic" src="file:///home/ai-developer/Projects/electron-tutorial-app/assets/images/obj-fairy.png"></img>
+                </div>
+                <div class="cell" style="background-color: #bbb;">Description</div>
+                <div class="cell" style="background-color: #ccc;">
+                    <a href="file:///home/ai-developer/Projects/embree/readme.pdf">Image Denoiser README.pdf</a>
+                </div>
+                <div class="cell" style="background-color: #ddd;">OIDN sample terminal</div>
+                <div class="cell" style="background-color: #eee;">OIDN sample folder</div>
+            </div>
+        </div>
+        <div class="footer">Intel Confidential</div>
+    </body>
+</html>

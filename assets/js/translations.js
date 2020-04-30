@@ -11,7 +11,7 @@ function(n) {
       },
 
       welcome: function() {
-        $('#welcome .inner p').text(i18n.__('Hopefully this helps someone to get up to speed with electron.'));
+        $('#welcome .inner p').text(i18n.__('A proposal for an Intel\xAE Render Kit\u2122 Teradici\xAE on-node browser.'));
         $('#learn-more-button').text(i18n.__('Learn more'));
       },
 
