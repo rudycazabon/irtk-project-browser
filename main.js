@@ -93,13 +93,35 @@ ipcMain.on('close-second-window', (event, arg)=> {
 ipcMain.on('open-pathtracer-app', (event, arg) => {
   var child = require('child_process').execFile;
   var executablePath = "/home/ai-developer/Projects/embree/bin/pathtracer";
-    
+      
   child(executablePath, function(err, data) {
        console.log(err)
        console.log(data.toString());
   });  
 })
 
+ipcMain.on('open-firefox-gsg-app', (event, arg) => {
+  var child = require('child_process').execFile;
+  var executablePath = "/usr/bin/firefox";
+  var args = ["https://software.intel.com/en-us/get-started-with-intel-oneapi-render-linux"];
+    
+  child(executablePath, args, function(err, data) {
+       console.log(err)
+       console.log(data.toString());
+  });  
+})
+
+
+ipcMain.on('open-firefox-learnmore-app', (event, arg) => {
+  var child = require('child_process').execFile;
+  var executablePath = "/usr/bin/firefox"; 
+  var args = ["https://software.intel.com/en-us/oneapi/render-kit"];
+    
+  child(executablePath, args, function(err, data) {
+       console.log(err)
+       console.log(data.toString());
+  });  
+})
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.

@@ -12,9 +12,17 @@ function(n) {
         ipcRenderer.send('close-second-window', 'an-argument')
       },
 
-      sendOpenXeyesEvent: function() {
+      sendOpenPathtracerEvent: function() {
         ipcRenderer.send('open-pathtracer-app', 'an-argument')
       },
+
+      sendGSGEvent: function() {
+        ipcRenderer.send('open-firefox-gsg-app','an-argument')
+      },
+
+      sendLearnMoreEvent: function() {
+        ipcRenderer.send('open-firefox-learnmore-app','an-argument')
+      },     
 
       init: function() {
         $('#open-secondwindow-button').click( function () {
@@ -26,7 +34,15 @@ function(n) {
         })
 
         $('#launch-pathtracer-button').click( function() {
-          ipc.messaging.sendOpenXeyesEvent()
+          ipc.messaging.sendOpenPathtracerEvent()
+        })
+
+        $('#launch-getting-started-guide-button').click( function() {
+          ipc.messaging.sendGSGEvent()
+        })
+
+        $('#learn-more-button').click( function() {
+          ipc.messaging.sendLearnMoreEvent()
         })
 
       }
