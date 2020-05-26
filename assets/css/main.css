@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'Intel Clear';
-    src: local('fonts/IntelClear_Bd.ttf') format('truetype');
+    src: url('../fonts/IntelClear_Rg.ttf') format('truetype');
     font-weight: normal;
     font-style: normal
 }
