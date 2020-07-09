@@ -68,6 +68,7 @@ function createWindow () {
     height: 600,
     minWidth: 800,
     minHeight: 600,
+    resizable: true,
     backgroundColor: '#0071c5',
     show: false,
     icon: path.join(__dirname, 'assets/icons/png/64x64.png'),
