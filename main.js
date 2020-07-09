@@ -92,7 +92,7 @@ ipcMain.on('close-second-window', (event, arg)=> {
 
 ipcMain.on('open-pathtracer-app', (event, arg) => {
   var child = require('child_process').execFile;
-  var executablePath = "/home/ai-developer/Projects/embree/bin/pathtracer";
+  var executablePath = "/opt/intel/inteloneapi/embree/latest/bin/pathtracer";
       
   child(executablePath, function(err, data) {
        console.log(err)
